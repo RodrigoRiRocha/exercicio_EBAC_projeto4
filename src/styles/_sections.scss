@@ -1,0 +1,194 @@
+@import 'variables';
+
+#sobre {
+    margin-bottom: 2em;
+    padding: 2em; /* Adicionar padding para a seção */
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .sobre__content {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 1em; /* Adicionar padding para o conteúdo */
+        justify-content: center; /* Centralizar o conteúdo */
+    }
+
+    .sobre__image {
+        width: 30%;
+        height: auto;
+    }
+
+    .sobre__text {
+        font-size: 1.2em;
+        line-height: 1.5;
+        flex: 1;
+        padding: 1em; /* Adicionar padding ao texto */
+    }
+}
+
+#sinopse {
+    margin-bottom: 2em;
+    padding: 2em; /* Adicionar padding para a seção */
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .sinopse__content {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 1em; /* Adicionar padding para o conteúdo */
+        justify-content: center; /* Centralizar o conteúdo */
+    }
+
+    .sinopse__image {
+        width: 30%;
+        height: auto;
+    }
+
+    .sinopse__text {
+        font-size: 1.2em;
+        line-height: 1.5;
+        flex: 1;
+        padding: 1em; /* Adicionar padding ao texto */
+    }
+}
+
+#elenco {
+    margin-bottom: 2em;
+    padding: 2em; /* Adicionar padding para a seção */
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .elenco__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+
+        .elenco__item {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            img {
+                width: 150px;
+                height: auto;
+                object-fit: cover;
+            }
+
+            .elenco__text {
+                flex: 1;
+
+                h3 {
+                    font-size: 1.2em;
+                    margin-bottom: 0.5em;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 1em;
+
+        li {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+    }
+}
+
+#carrossel {
+    .carrossel__container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        .carrossel__images {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Adicionar transição suave */
+            width: 100%; /* Garantir que o container de imagens tenha a largura correta */
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+        }
+
+        .carrossel__prev, .carrossel__next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: $text-color;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .carrossel__prev {
+            left: 1em;
+        }
+
+        .carrossel__next {
+            right: 1em;
+        }
+    }
+}
+
+#trailer {
+    margin-top: 2em;
+    text-align: center;
+
+    h2 {
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        text-align: center; /* Centralizar o título */
+    }
+
+    .trailer__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        iframe {
+            width: 800px;
+            height: 450px;
+            border: none;
+        }
+    }
+}
+
+#topo {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .topo__image {
+        width: 100%;
+        height: auto;
+        max-height: 100%; /* Ajustar a altura máxima para caber na página */
+        object-fit: cover;
+        object-position: center; /* Centralizar a imagem */
+    }
+}

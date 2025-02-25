@@ -1,0 +1,456 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'sections';
+
+/* Estilos principais utilizando a metodologia BEM */
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+html {
+    text-size-adjust: 100%;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 1em 0;
+    text-align: center;
+
+    h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    nav {
+        margin-top: 1em;
+        position: relative;
+
+        .navbar__toggle {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 1.2em;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+
+        &.navbar__menu--active {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar__toggle {
+        display: block;
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        &.navbar__menu--active {
+            display: flex;
+        }
+
+        li {
+            padding: 1em 0;
+        }
+    }
+}
+
+main {
+    padding: 2em;
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    p, ul {
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+
+    .imagens__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+
+        img {
+            width: 100%;
+            height: 300px; /* Definir uma altura fixa */
+            object-fit: cover; /* Manter a proporção da imagem */
+        }
+    }
+
+    .carrossel__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 2em;
+
+        .carrossel__images {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .carrossel__images img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .carrossel__prev, .carrossel__next {
+            background-color: #fff;
+            color: #000;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+    }
+
+    video {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 2em;
+    }
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 1em 0;
+    text-align: center;
+
+    p {
+        margin: 0;
+        font-size: 1em;
+        color: #666;
+    }
+}
+
+.header {
+    &__title {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    &__nav {
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}
+
+.main {
+    &__section {
+        margin-bottom: 2em;
+    }
+
+    &__title {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    &__text {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    &__video {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+.footer {
+    &__section {
+        margin-top: 2em;
+    }
+
+    &__title {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    &__text {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+}
+
+.imagens {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+
+        img {
+            width: 100%;
+            height: 300px; /* Definir uma altura fixa */
+            object-fit: cover; /* Manter a proporção da imagem */
+        }
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.carrossel {
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__images {
+        display: flex;
+        overflow: hidden;
+        width: 80%;
+    }
+
+    &__images img {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    &__prev, &__next {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 0.5em 1em;
+        cursor: pointer;
+    }
+}
+
+#direitos {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.trailer__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+
+    video {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+#sobre {
+    margin-bottom: 2em;
+    padding: 2em; /* Adicionar padding para a seção */
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .sobre__content {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        padding: 1em; /* Adicionar padding para o conteúdo */
+    }
+
+    .sobre__image {
+        width: 30%;
+        height: auto;
+    }
+
+    .sobre__text {
+        font-size: 1.2em;
+        line-height: 1.5;
+        flex: 1;
+    }
+}
+
+#carrossel {
+    .carrossel__container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        .carrossel__images {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Adicionar transição suave */
+            width: 100%; /* Garantir que o container de imagens tenha a largura correta */
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+        }
+
+        .carrossel__prev, .carrossel__next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 1em;
+            cursor: pointer;
+        }
+
+        .carrossel__prev {
+            left: 1em;
+        }
+
+        .carrossel__next {
+            right: 1em;
+        }
+    }
+}
+
+#trailer {
+    margin-top: 2em;
+    text-align: center;
+
+    h2 {
+        font-size: 2.5em;
+        margin-bottom: 1em;
+        text-align: center; /* Centralizar o título */
+    }
+
+    .trailer__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        iframe {
+            width: 800px;
+            height: 450px;
+            border: none;
+        }
+    }
+}
+
+#topo {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .topo__image {
+        width: 100%;
+        height: auto;
+        max-height: 100%; /* Ajustar a altura máxima para caber na página */
+        object-fit: cover;
+        object-position: center; /* Centralizar a imagem */
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 0.2em 1em; /* Ajustar padding para a navbar */
+
+    &__title {
+        font-size: 2em; /* Ajustar tamanho da fonte */
+        color: #fff;
+        margin: 0;
+    }
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        gap: 1em;
+        margin: 0;
+        padding: 0;
+
+        li {
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1em; /* Ajustar tamanho da fonte */
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}

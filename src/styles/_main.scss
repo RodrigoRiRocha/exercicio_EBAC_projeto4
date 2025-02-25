@@ -1,0 +1,61 @@
+@import 'variables';
+
+main {
+    padding: 2em;
+
+    h2 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    p, ul {
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+
+    .imagens__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+
+        img {
+            width: 100%;
+            height: 300px; /* Definir uma altura fixa */
+            object-fit: cover; /* Manter a proporção da imagem */
+        }
+    }
+
+    .carrossel__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 2em;
+
+        .carrossel__images {
+            display: flex;
+            overflow: hidden;
+            width: 80%;
+        }
+
+        .carrossel__images img {
+            width: 100%;
+            height: auto;
+            flex-shrink: 0;
+        }
+
+        .carrossel__prev, .carrossel__next {
+            background-color: $text-color;
+            color: $background-color;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+        }
+    }
+
+    video {
+        width: 100%;
+        max-width: 600px;
+        margin-top: 2em;
+    }
+}

@@ -1,0 +1,14 @@
+@import 'variables';
+
+footer {
+    background-color: $navbar-background-color;
+    padding: 1em 0;
+    text-align: center;
+
+    p {
+        margin: 0;
+        font-size: 1em;
+        color: #666;
+        padding-top: 20px;
+    }
+}
